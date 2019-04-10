@@ -22,3 +22,8 @@ document.onkeydown = function(e){
 	    search();
 	}
 }
+
+window.onload = function(){
+	var content_input = document.getElementById('content');
+    content_input.focus();
+}
