@@ -10,7 +10,9 @@ function search() {
 		url = "https://cn.bing.com/search?ensearch=1&q=";
 	} else if("S.O."===engine){
 		url = "https://stackoverflow.com/search?q=";
-	}else{
+	} else if("Github"===engine){
+		url = "https://github.com/search?q=";
+	} else {
 		return;
 	}
 	window.location.href = url + content;
