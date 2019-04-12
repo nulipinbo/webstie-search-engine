@@ -8,36 +8,29 @@ function search() {
 		url = "https://www.baidu.com/s?wd=";
 	} else if("Bing"===engine){
 		url = "https://cn.bing.com/search?ensearch=1&q=";
-	} else if("Stackoverflow"===engine){
+	} else if("S.O."===engine){
 		url = "https://stackoverflow.com/search?q=";
 	}else{
 		return;
 	}
 	window.location.href = url + content;
 }
-
 document.onkeydown = function(e){
 	var ev = document.all ? window.event : e;
 	if(ev.keyCode==13) {
 	    search();
 	}
 }
-
 window.onload = function(){
 	var content_input = document.getElementById('content');
     content_input.focus();
 }
-
 var ipt=document.getElementById('btn'); 
-
 var ul=document.getElementById('ul'); 
-
 var li=ul.children; 
-
 ipt.onclick = function(){
 	ul.style.display='block';
 };
-
 for(var i=0;i<li.length;i++){
 　　li[i].onclick=function(){
 　　　　ipt.innerText=this.innerText; 
