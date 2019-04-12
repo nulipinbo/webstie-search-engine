@@ -1,14 +1,14 @@
 function search() {
 	var content = document.getElementById("content").value; 
-	var engine = document.getElementById("engine").value;
+	var engine = document.getElementById("btn").innerText;
 	var url; 
-	if("google"===engine){
+	if("Google"===engine){
 		url = "https://www.google.com/search?&q=";
-	} else if("baidu"===engine){
+	} else if("Baidu"===engine){
 		url = "https://www.baidu.com/s?wd=";
-	} else if("bing"===engine){
+	} else if("Bing"===engine){
 		url = "https://cn.bing.com/search?ensearch=1&q=";
-	} else if("stackoverflow"===engine){
+	} else if("Stackoverflow"===engine){
 		url = "https://stackoverflow.com/search?q=";
 	}else{
 		return;
@@ -26,4 +26,21 @@ document.onkeydown = function(e){
 window.onload = function(){
 	var content_input = document.getElementById('content');
     content_input.focus();
+}
+
+var ipt=document.getElementById('btn'); 
+
+var ul=document.getElementById('ul'); 
+
+var li=ul.children; 
+
+ipt.onclick = function(){
+	ul.style.display='block';
+};
+
+for(var i=0;i<li.length;i++){
+　　li[i].onclick=function(){
+　　　　ipt.innerText=this.innerText; 
+		ul.style.display='none'; 
+　　};
 }
