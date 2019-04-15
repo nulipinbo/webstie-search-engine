@@ -1,6 +1,6 @@
 function search() {
 	var content = document.getElementById("content").value; 
-	var engine = document.getElementById("btn").innerText;
+	var engine = document.getElementById("engine").innerText;
 	var url; 
 	if("Google"===engine){
 		url = "https://www.google.com/search?&q=";
@@ -8,11 +8,11 @@ function search() {
 		url = "https://www.baidu.com/s?wd=";
 	} else if("Bing"===engine){
 		url = "https://cn.bing.com/search?ensearch=1&q=";
-	} else if("S.O."===engine){
-		url = "https://stackoverflow.com/search?q=";
 	} else if("Github"===engine){
 		url = "https://github.com/search?q=";
-	} else {
+	} else if("S.O."===engine){
+		url = "https://stackoverflow.com/search?q=";
+	}else {
 		return;
 	}
 	window.location.href = url + content;
@@ -27,8 +27,8 @@ window.onload = function(){
 	var content_input = document.getElementById('content');
     content_input.focus();
 }
-var ipt=document.getElementById('btn'); 
-var ul=document.getElementById('ul'); 
+var ipt=document.getElementById('engine'); 
+var ul=document.getElementById('engine_selector'); 
 var li=ul.children; 
 ipt.onclick = function(){
 	ul.style.display='block';
