@@ -62,3 +62,7 @@ li {
  	font-weight: bold;
  	padding-right: 10px;
 }
+
+li a{
+	text-decoration:none;
+}
